@@ -1,0 +1,147 @@
+*{
+    padding: 0px;
+    margin: 0px;  
+}
+body{
+    padding: 0px;
+    margin: 0px;    
+}
+.probandoClassName{
+    color: green;
+    background-color:blue;
+    font-size: 5rem;
+}
+.nav-box{
+    height: 13vh;
+}
+nav{
+    background-color: red;
+    height: 100%;
+}
+nav ul{
+    display: flex;
+    background-color: #2e3047;
+    height: 100%;
+    line-height: 10vh;
+}
+nav ul li{
+    list-style: none;
+    padding: 10px;
+    font-size: 25px;
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+.box-bd{
+    display: flex;
+    background-color: rgb(46, 48, 71);
+    height: 72.8vh;
+}
+.box-mysql{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid white;
+    transition: flex 1s ease-out, opacity 0.3s ease-out;
+    /*-webkit-transform: skew(20deg);
+     -moz-transform: skew(20deg);
+     -ms-transform: skew(20deg);
+     -o-transform: skew(20deg);
+     transform: skew(20deg);*/
+
+}
+.box-mongodb{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: flex 1s ease-out, opacity 0.3s ease-out;
+}
+
+.box-mongodb:hover{
+  background-image: url(MongoDB_Logo.svg.png),linear-gradient(90deg, rgba(8,200,92,1) 37%, rgba(9,147,78,1) 52%);
+  background-size:contain; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+  background-repeat: no-repeat;
+  flex: 2;
+}
+body:has(.box-mongodb:hover) .box-mongodb p {
+    margin-top: 25vh;
+  }
+/*body:has(.box-mongodb:hover) .box-mysql {
+    background: orange;
+    display: none;
+  }*/
+.box-mysql:hover{
+    background-color: purple;
+    background-image: url(../assets/mysql_back.png),linear-gradient(90deg, rgba(228,142,0,1) 27%, rgba(0,97,138,0.7707457983193278) 66%);
+    background-size:contain; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+    background-repeat: no-repeat;
+    flex: 2;
+  }
+  body:has(.box-mysql:hover) .box-mysql p {
+    margin-top: 25vh;
+  }
+.box-bd p{
+    color: white;
+    font-size: 10vh;
+    /*background-color: #02455a;*/
+    padding: 10px;
+    cursor: pointer;
+}
+.box-mongodb p:hover ,.box-mysql p:hover {
+    background-color: rgb(46, 48, 71);
+    padding: 2vh;
+}
+.login-div{
+    background-color: red;
+}
+.login-zone{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(46, 48, 71);;
+    align-items: center;
+    padding: 21vh;
+}
+.form-class{
+    width: 31%;
+    height: 38vh;
+    padding: 3.5vh;
+    background: linear-gradient(141deg, rgba(228,142,0,1) 6%, rgba(0,97,138,0.7707457983193278) 41%, rgba(9,147,78,0.5998774509803921) 84%, rgba(8,200,92,0.7651435574229692) 100%);
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    gap: 33px;
+    align-items: center;
+    border-radius: 11vh;
+}
+.login-zone  h2{
+    /*margin-bottom: -2vh;*/
+    color: white;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    height: 7vh;
+    border: none;
+    /*border-bottom: 4px solid red;*/
+    padding: 0.8vh;
+    font-size: 4vh;
+  }
+  .login-zone button{
+    width: 80%;
+    height: 5vh;
+    border: 5px solid lightblue;
+    /* border-bottom: 4px solid red; */
+    background-color: lightblue;
+    border-radius: 1vh;
+    font-size: 3.5vh;
+  }
+  .login-zone h2,
+  .login-zone input[type="text"],
+  .login-zone input[type="password"],
+  .login-zone .but-login{
+    margin-bottom: -3vh;
+}
