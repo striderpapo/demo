@@ -33,10 +33,25 @@ nav ul li a{
     color: white;
     text-decoration: none;
 }
+.titel-inicio{
+  font-family:"-apple-system" ;
+  font-size:5rem ;
+  font-weight:1.5 ;
+  color: white;
+  background-color:#2e3047 ;
+  text-align: center;
+}
 .box-bd{
     display: flex;
     background-color: rgb(46, 48, 71);
     height: 72.8vh;
+    flex-direction: row;
+}
+.box-bd-device{
+    display: none;
+        background-color: rgb(46, 48, 71);
+        height: 80vh;
+        flex-direction: column;
 }
 .box-mysql{
     flex: 1;
@@ -144,4 +159,82 @@ input[type="password"] {
   .login-zone input[type="password"],
   .login-zone .but-login{
     margin-bottom: -3vh;
+}
+
+
+/*medias queries*/
+@media (max-width: 1024px) {
+  /*  .titel-inicio{
+    background-color: red;
+}*/
+}
+
+@media (max-width: 768px) {
+    /*.titel-inicio{
+        background-color: rgb(17, 0, 255);
+    }*/
+    .box-bd{
+        display: none;
+    }
+    .box-bd-device{
+        display: flex;
+    }
+    .box-mysql-device{
+        background-image: url(../assets/mysql_back.png),linear-gradient(90deg, rgba(228,142,0,1) 27%, rgba(0,97,138,0.7707457983193278) 66%);
+        background-size:contain; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+        background-repeat: no-repeat;
+        flex: 2;
+      }
+      .box-mysql-device{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: 1px solid white;
+        transition: flex 1s ease-out, opacity 0.3s ease-out;
+        /*-webkit-transform: skew(20deg);
+         -moz-transform: skew(20deg);
+         -ms-transform: skew(20deg);
+         -o-transform: skew(20deg);
+         transform: skew(20deg);*/
+    
+    }
+      .box-mongodb-device{
+        background-image: url(MongoDB_Logo.svg.png),linear-gradient(90deg, rgba(8,200,92,1) 37%, rgba(9,147,78,1) 52%);
+        background-size:contain; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+        background-repeat: no-repeat;
+        flex: 2;
+      }
+      .box-mongodb-device{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: flex 1s ease-out, opacity 0.3s ease-out;
+    }
+      .box-bd-device p {
+        color: white;
+        font-size: 8vh;
+        background-color: #02455a; 
+        padding: 10px; 
+        cursor: pointer;
+        margin-top: 10vh;
+    }
+    .titel-inicio {
+        padding: 2vh;
+    }
+    nav ul {
+        line-height: 12vh;
+    }
+    nav ul li {
+        padding: 12px;
+        font-size: 6vh;
+    }
+
+}
+
+@media (max-width: 600px) {
+ /*   .titel-inicio{
+        background-color: rgb(19, 136, 35);
+    }*/
 }

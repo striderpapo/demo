@@ -4,17 +4,23 @@ import Menu from '../containers/menu'
 function LoginLayout(props){ 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    //const navigate = useNavigate();
+    const navigate = useNavigate();
     console.log(props.onLogin)
     const handleLogin = async () => {
+      console.log(username)
         try {
-          const response = await fetch(`http://192.168.1.68:3700/api/get-usersignup/${username}/${password}`).then(res => res.json()) 
-          props.onLogin(response.usuarioApp.usuario); // Llama a la función proporcionada por el padre
+          const response = await fetch(`http://192.168.1.68:3700/api/guser/${username}`).then(res => res.json()) 
+          console.log(response)
+          props.onLogin(response.user[0].username); // Llama a la función proporcionada por el padre
       //    navigate("/home");
         } catch (error) {
           console.error('Error de inicio de sesión:', error);
         }
       };
+
+      function handleClick() {
+        navigate("/nosotros");
+      }
 
   return(
     <div className="login-div">
@@ -35,7 +41,7 @@ function LoginLayout(props){
       onChange={(e) => setPassword(e.target.value)}
     />
     <button onClick={handleLogin} className="but-login">Iniciar Sesión</button>
-    <button className="but-registro">Registrarte</button>
+    <button onClick={handleClick} className="but-registro">Registrarte</button>
     </div>
     </div>
   </div>

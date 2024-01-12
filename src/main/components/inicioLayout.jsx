@@ -5,18 +5,27 @@ function InicioLayout(props){
   //<Link to="nosotros"><button style={estilos.buttonPrueba}>Haz clic para ver la página sobre nosotros</button></Link>
   //<p className='probandoClassName'>Inicio</p>
         //<button style={estilos.buttonPrueba} onClick={handleClick}>Haz clic para ver la página sobre nosotros</button>
+        //<h2 style={estilos.avatar}>{props.item}</h2>
   function handleClick() {
     navigate("/login");
   }
     return(
       <div>
         <Menu/>
-        <h2 style={estilos.avatar}>{props.item}</h2>
+        <h2 className="titel-inicio">{props.item}</h2>
         <div className="box-bd">
           <div className="box-mysql">
                 <p onClick={handleClick}>MySQL</p>
           </div>
           <div className="box-mongodb">
+              <p onClick={handleClick}>mongo DB</p>
+          </div>
+        </div>
+        <div className="box-bd-device">
+          <div className="box-mysql-device">
+                <p onClick={handleClick}>MySQL</p>
+          </div>
+          <div className="box-mongodb-device">
               <p onClick={handleClick}>mongo DB</p>
           </div>
         </div>
@@ -35,6 +44,7 @@ const estilos = {
     color: "white",
     backgroundColor: "#2e3047",
     textAlign:"center",
+    
   },
   buttonPrueba:{
     backgroundColor:"purple",
@@ -42,7 +52,6 @@ const estilos = {
     padding:"1rem",
     cursor:"pointer",
   }
-
 };
 
 

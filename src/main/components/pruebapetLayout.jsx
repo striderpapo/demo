@@ -1,18 +1,60 @@
 import { Link,Outlet,useNavigate } from "react-router-dom";
+import { useState } from 'react';
 import Menu from '../containers/menu'
 function PruebapetLayout(props){
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  //<Link to="contacto"><button style={estilos.buttonPrueba}>Haz clic para ver la página contacto</button></Link> 
+  
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch('http://192.168.1.68:3700/api/suser', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        console.log(data.usuario);
+      } else {
+        console.error(data.message);
+      }
+    } catch (error) {
+      console.error('Error al enviar datos:', error);
+    }
+  };
+  
+
   function handleClick() {
-    navigate("/contacto");
+    navigate("/login");
   }
   return(
-      <div>
-        <Menu/>
-        <h2 style={estilos.avatar}>{props.item}</h2>
-        <p className='probandoClassName'>Sobre nosotros</p>
-        <button style={estilos.buttonPrueba} onClick={handleClick}>Haz clic para ver la página contacto</button>
-      </div>
+    <div className="login-div">
+    <Menu/>
+    <div className="login-zone">
+      <div className="form-class">
+  <h2>Registro</h2>
+  <input
+    type="text"
+    placeholder="Nombre de usuario"
+    value={username}
+    onChange={(e) => setUsername(e.target.value)}
+  />
+  <input
+    type="password"
+    placeholder="Contraseña"
+    value={password}
+    onChange={(e) => setPassword(e.target.value)}
+  />
+  <button onClick={handleSubmit} className="but-login">Registrarte</button>
+  <button onClick={handleClick} className="but-registro">Volver</button>
+  </div>
+  </div>
+</div>
     )
 
   
