@@ -9,7 +9,7 @@ function LoginLayout(props){
     const handleLogin = async () => {
       console.log(username)
         try {
-          const response = await fetch(`http://44.226.145.213/api/guser/${username}`).then(res => res.json()) 
+          const response = await fetch(`https://backenddemosite.onrender.com/api/guser/${username}`).then(res => res.json()) 
           console.log(response)
           props.onLogin(response.user[0].username); // Llama a la función proporcionada por el padre
       //    navigate("/home");
