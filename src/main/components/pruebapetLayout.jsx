@@ -8,7 +8,7 @@ function PruebapetLayout(props){
   
   const handleSubmit = async () => {
     try {
-      const response = await fetch('http://192.168.1.68:3700/api/suser', {
+      const response = await fetch('https://backenddemosite.onrender.com/api/suser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
