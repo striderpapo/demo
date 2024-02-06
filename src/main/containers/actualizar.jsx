@@ -1,0 +1,60 @@
+import React, { Component } from 'react';
+import ActualizarLayout from '../components/actualizarLayout';
+
+class Actualizar extends Component {
+    constructor(props){
+        super(props);
+        this.onlogout=this.props.onLogout;
+        this.state={
+            isHola:"hola desde Inside",
+            userName:this.props.user,
+            dataSource:[],
+          }
+        }
+
+        async getDatainfoCita(){
+            var prueba=[]
+            console.log("props")
+
+            try {
+                const accountInfo = await fetch(`http://192.168.1.68:3700/api/gproduc/${localStorage.getItem('myData')}`).then(res => res.json())
+                // We can now store account info state on this component
+               // console.log(accountInfo.cita.length)
+                
+                prueba=accountInfo.product
+                //console.log("prueba")
+                //console.log(typeof prueba)
+                //console.log(prueba)
+                this.setState({
+                    dataSource:prueba
+                    })    
+                    //console.log(this.state.dataSource)
+               
+            } catch (err) {
+                                            console.log(err);
+                                          }
+          }        
+
+      componentDidMount(){
+          this.getDatainfoCita();
+        //console.log(this.onlogout)
+      }
+
+         
+ render(){
+    let {isHola,userName,dataSource}=this.state
+    if(this.state.dataSource.length>0){
+    return(
+    <ActualizarLayout dataUser={dataSource} datafunction={this.getDatainfoCita}/>
+ )
+    }else{
+      return(
+        <div style={{backgroundColor: "#2e3047"}}>
+      <h2 style={{color: "white"}}>Sin datos para actualizar</h2>
+      </div>
+      )
+    }
+    }
+}
+
+export default Actualizar
