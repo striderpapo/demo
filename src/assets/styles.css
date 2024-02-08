@@ -382,6 +382,59 @@ padding: 5vh;
         width: 100%;
         height: 38vh;
     }
+    .style-home h2 {
+        text-align: center;
+        padding: 2vh 0vh;
+        font-size: 9vh;
+        color: white;
+        width: 100%;
+    }
+    .style-banner button {
+        font-size: 3vh;
+        margin-right: 2vh;
+        padding: 1vh;
+        width: 36%;
+    }
+    .crud-section {
+        background-color: #2e3047;
+        padding: 0vh;
+        margin-top: 2vh;
+    }
+    .crud-section .buttons-design {
+        font-size: 15px;
+        width: 33.2%;
+    }
+    .crud-section section {
+        width: 96.5%;
+    }
+    .style-form input[type="text"], .style-form input[type="password"] {
+        width: 97%;
+    }
+    .but-agregarSubmit {
+        width: unset;
+    }
+    .style-mostrar {
+        padding: 0vh;
+    }
+    .style-mostrar ul {
+        padding:2vh 4vh;;
+    }
+    .but-editarSubmit {
+        font-size: 3vh;
+        width: 49%;
+    }
+    .style-mostrar ul li p {
+        width: 100%;
+    }
+    .section-editbuttons{
+        margin-top: 2vh;
+    }
+    .style-mostrar input[type="text"], .style-mostrar input[type="password"] {
+        width: 96%;
+        height: 7vh;
+        padding: 1vh;
+        font-size: 7vh;
+    }
 
 }
 

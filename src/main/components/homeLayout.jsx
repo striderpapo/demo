@@ -27,7 +27,7 @@ function HomeLayout(props){
   return(
     <div className="style-home">
       <div className="style-banner">
-      <h2>crud sencillo {props.nameUser}</h2>
+      <h2>Crud sencillo {props.nameUser}</h2>
         <button onClick={handleLogout}>cerrar sesion</button>
       </div>
       <div className="crud-section">
