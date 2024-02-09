@@ -30,7 +30,8 @@ function ActualizarLayout(props){
     const handleDelete = async (id) => {
         console.log(id)
         try {
-          const response = await fetch(`http://192.168.1.68:3700/api/dproduc/${id}`, {
+          //const response = await fetch(`http://192.168.1.68:3700/api/dproduc/${id}`, {
+          const response = await fetch(`https://backenddemosite.onrender.com/api/dproduc/${id}`, {
             method: 'DELETE',
             headers: {
               'Content-Type': 'application/json',
@@ -69,8 +70,8 @@ function ActualizarLayout(props){
           console.log(ite)
           // Realizar la solicitud fetch para actualizar los datos
           /*console.log(modelo)*/
-
-          const response = await fetch(`http://192.168.1.68:3700/api/eproduc/${ite._id}`, {
+          //const response = await fetch(`http://192.168.1.68:3700/api/eproduc/${ite._id}`, {
+          const response = await fetch(`https://backenddemosite.onrender.com/api/eproduc/${ite._id}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
@@ -95,7 +96,8 @@ function ActualizarLayout(props){
         console.log("props")
 
         try {
-            const accountInfo = await fetch(`http://192.168.1.68:3700/api/gproduc/${localStorage.getItem('myData')}`).then(res => res.json())
+          //const accountInfo = await fetch(`http://192.168.1.68:3700/api/gproduc/${localStorage.getItem('myData')}`).then(res => res.json())
+            const accountInfo = await fetch(`https://backenddemosite.onrender.com/api/gproduc/${localStorage.getItem('myData')}`).then(res => res.json())
             // We can now store account info state on this component
            // console.log(accountInfo.cita.length)
             
