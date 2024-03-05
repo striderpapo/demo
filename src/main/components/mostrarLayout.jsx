@@ -12,6 +12,7 @@ function MostrarLayout(props){
             <p>{item.nombre}</p>
             <p>{item.descripcion}</p>
             <p>{item.nombreagrega}</p>
+            <img src={item.imageproducto} alt="Logo de mi aplicación" />
             </li>
             </ul>
           ))}

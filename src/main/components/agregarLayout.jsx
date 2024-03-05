@@ -4,9 +4,16 @@ import { useState } from 'react';
 function AgregarLayout(props){ 
   const [nombre, setnombreProducto] = useState('');
   const [descripcion, setDescripcion] = useState('');
+  const [selectedFile, setSelectedFile] = useState(null);
+
   console.log(props)
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
   const agregarSubmit = async () => {
     let nombreagrega=localStorage.getItem('myData')
+    const formData = new FormData();
+    formData.append('imageproducto', selectedFile);
     try {
       /*const response = await fetch('https://backenddemosite.onrender.com/api/suser', {
         method: 'POST',
@@ -27,9 +34,27 @@ function AgregarLayout(props){
       const data = await response.json();
   
       if (response.ok) {
-        console.log(data.producto);
+        console.log(data.producto._id);
       setnombreProducto('');
       setDescripcion('');
+      //fetch(`http://192.168.1.68:3700/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
+      fetch('https://backenddemosite.onrender.com/api/uImageProd/${data.producto._id}/${nombreagrega}`', {
+      method: 'POST',
+      body: formData,
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to upload image');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Image uploaded successfully:', data);
+        // Do something with the response if needed
+      })
+      .catch(error => {
+        console.error('Error uploading image:', error);
+      });
       } else {
         console.error(data.message);
       }
@@ -54,6 +79,10 @@ function AgregarLayout(props){
     value={descripcion}
     onChange={(e) => setDescripcion(e.target.value)}
   />
+  <input type="file" onChange={handleFileChange} />
+  {selectedFile && (
+        <p>Selected file: {selectedFile.name}</p>
+      )}
   <button onClick={agregarSubmit} className="but-agregarSubmit">Agregar</button>
 
   </div>

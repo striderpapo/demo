@@ -9,6 +9,7 @@ class Mostrar extends Component {
             isHola:"hola desde Inside",
             userName:this.props.user,
             dataSource:[],
+            sindatos:false
           }
         }
 
@@ -25,10 +26,17 @@ class Mostrar extends Component {
                 prueba=accountInfo.product
                 //console.log("prueba")
                 //console.log(typeof prueba)
-                //console.log(prueba)
+                console.log(prueba)
+                if(prueba.length>0){
                 this.setState({
-                    dataSource:prueba
-                    })    
+                    dataSource:prueba,
+                    sindatos:false
+                    })  
+                  }else{
+                    this.setState({
+                      sindatos:true
+                      })  
+                  }
                     //console.log(this.state.dataSource)
                
             } catch (err) {
@@ -48,7 +56,8 @@ class Mostrar extends Component {
     return(
     <MostrarLayout dataUser={dataSource}/>
  )
-    }else{
+    }
+    if(this.state.sindatos){
         return(
           <div style={{backgroundColor: "#2e3047"}}>
         <h2 style={{color: "white"}}>Sin datos para mostrar</h2>

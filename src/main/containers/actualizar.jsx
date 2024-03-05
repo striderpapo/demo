@@ -9,6 +9,7 @@ class Actualizar extends Component {
             isHola:"hola desde Inside",
             userName:this.props.user,
             dataSource:[],
+            sindatos:false
           }
         }
 
@@ -17,7 +18,7 @@ class Actualizar extends Component {
             console.log("props")
 
             try {
-                //const accountInfo = await fetch(`http://192.168.1.68:3700/api/gproduc/${localStorage.getItem('myData')}`).then(res => res.json())
+               // const accountInfo = await fetch(`http://192.168.1.68:3700/api/gproduc/${localStorage.getItem('myData')}`).then(res => res.json())
                 const accountInfo = await fetch(`https://backenddemosite.onrender.com/api/gproduc/${localStorage.getItem('myData')}`).then(res => res.json())
                 // We can now store account info state on this component
                // console.log(accountInfo.cita.length)
@@ -26,9 +27,16 @@ class Actualizar extends Component {
                 //console.log("prueba")
                 //console.log(typeof prueba)
                 //console.log(prueba)
-                this.setState({
-                    dataSource:prueba
-                    })    
+                if(prueba.length>0){
+                  this.setState({
+                      dataSource:prueba,
+                      sindatos:false
+                      })  
+                    }else{
+                      this.setState({
+                        sindatos:true
+                        })  
+                    }   
                     //console.log(this.state.dataSource)
                
             } catch (err) {
@@ -48,7 +56,9 @@ class Actualizar extends Component {
     return(
     <ActualizarLayout dataUser={dataSource} datafunction={this.getDatainfoCita}/>
  )
-    }else{
+    }
+    
+    if(this.state.sindatos){
       return(
         <div style={{backgroundColor: "#2e3047"}}>
       <h2 style={{color: "white"}}>Sin datos para actualizar</h2>
