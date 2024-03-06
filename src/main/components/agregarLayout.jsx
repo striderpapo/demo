@@ -38,7 +38,7 @@ function AgregarLayout(props){
       setnombreProducto('');
       setDescripcion('');
       //fetch(`http://192.168.1.68:3700/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
-      fetch('https://backenddemosite.onrender.com/api/uImageProd/${data.producto._id}/${nombreagrega}`', {
+      fetch(`https://backenddemosite.onrender.com/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
       method: 'POST',
       body: formData,
     })
