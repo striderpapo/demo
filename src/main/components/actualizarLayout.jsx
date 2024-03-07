@@ -30,8 +30,8 @@ function ActualizarLayout(props){
     const handleDelete = async (id) => {
         console.log(id)
         try {
-          const response = await fetch(`http://192.168.1.68:3700/api/dproduc/${id}`, {
-          //const response = await fetch(`https://backenddemosite.onrender.com/api/dproduc/${id}`, {
+          //const response = await fetch(`http://192.168.1.68:3700/api/dproduc/${id}`, {
+          const response = await fetch(`https://backenddemosite.onrender.com/api/dproduc/${id}`, {
             method: 'DELETE',
             headers: {
               'Content-Type': 'application/json',
