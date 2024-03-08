@@ -15,8 +15,8 @@ function PruebapetLayout(props){
         },
         body: JSON.stringify({ username, password }),
       });*/
-      //const response = await fetch('http://192.168.1.68:3700/api/suser', {
-        const response = await fetch('https://backenddemosite.onrender.com/api/suser', {
+      const response = await fetch('http://192.168.1.68:3700/api/suser', {
+        //const response = await fetch('https://backenddemosite.onrender.com/api/suser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
