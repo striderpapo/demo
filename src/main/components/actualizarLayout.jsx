@@ -1,5 +1,6 @@
 import { Link,useNavigate,Outlet } from "react-router-dom";
 import { useState,useEffect  } from 'react';
+import { decodeToken } from '../services/auth';
 
 function ActualizarLayout(props){ 
   const [nombre, setnombreProducto] = useState('');
@@ -60,7 +61,7 @@ function ActualizarLayout(props){
         setDescripcion(ite.descripcion)
         setIdedita(ite._id)
       };
-      const confirmUpdate = async (ite,nom,des) => {
+      const confirmUpdate = async (ite) => {
         try {
           console.log("confirmando update")
          /* setModelo({
@@ -76,7 +77,7 @@ function ActualizarLayout(props){
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ nombre: nombre,descripcion:descripcion,nombreagrega:localStorage.getItem('myData') }),
+            body: JSON.stringify({ nombre: nombre,descripcion:descripcion,nombreagrega:decodeToken(localStorage.getItem('myData')).username }),
           }).then(res => res.json());
           if (response) {
             console.log('Datos actualizados con éxito');
@@ -96,7 +97,7 @@ function ActualizarLayout(props){
         console.log("props")
 
         try {
-           const accountInfo = await fetch(`http://192.168.1.68:3700/api/gproduc/${localStorage.getItem('myData')}`).then(res => res.json())
+           const accountInfo = await fetch(`http://192.168.1.68:3700/api/gproduc/${decodeToken(localStorage.getItem('myData')).username }`).then(res => res.json())
            //const accountInfo = await fetch(`https://backenddemosite.onrender.com/api/gproduc/${localStorage.getItem('myData')}`).then(res => res.json())
             // We can now store account info state on this component
            // console.log(accountInfo.cita.length)

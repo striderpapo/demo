@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MostrarLayout from '../components/mostrarLayout';
+import { decodeToken } from '../services/auth';
 
 class Mostrar extends Component {
     constructor(props){
@@ -16,9 +17,9 @@ class Mostrar extends Component {
         async getDatainfoCita(){
             var prueba=[]
             console.log("props")
-
+            
             try {
-                const accountInfo = await fetch(`http://192.168.1.68:3700/api/gproduc/${localStorage.getItem('myData')}`).then(res => res.json())
+                const accountInfo = await fetch(`http://192.168.1.68:3700/api/gproduc/${decodeToken(localStorage.getItem('myData')).username}`).then(res => res.json())
                 //const accountInfo = await fetch(`https://backenddemosite.onrender.com/api/gproduc/${localStorage.getItem('myData')}`).then(res => res.json())
                 // We can now store account info state on this component
                // console.log(accountInfo.cita.length)

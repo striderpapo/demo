@@ -311,6 +311,15 @@ padding: 5vh;
 .but-editarSubmit:hover,.but-agregarSubmit:hover{
     background-color: rgba(13,67,133,1);
 }
+.error-message{
+    width: 50%;
+    margin-top: 2vh;
+    font-size: 4vh;
+    color: rgb(205 0 0);
+    background-color: #FFCDC7;
+    padding: 2vh 1vh;
+    text-align: center;
+}
 /*medias queries*/
 @media (max-width: 1024px) {
   /*  .titel-inicio{

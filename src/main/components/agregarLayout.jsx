@@ -1,5 +1,7 @@
 import { Link,useNavigate,Outlet } from "react-router-dom";
 import { useState } from 'react';
+import { jwtDecode } from "jwt-decode";
+import { decodeToken } from '../services/auth'; 
 
 function AgregarLayout(props){ 
   const [nombre, setnombreProducto] = useState('');
@@ -11,7 +13,11 @@ function AgregarLayout(props){
     setSelectedFile(event.target.files[0]);
   };
   const agregarSubmit = async () => {
-    let nombreagrega=localStorage.getItem('myData')
+    const decoded = jwtDecode(localStorage.getItem('myData'));
+    const decodedimportado = decodeToken(localStorage.getItem('myData'));
+    //console.log(decoded.username);
+    //console.log(decodedimportado.username)
+    let nombreagrega=decodedimportado.username
     const formData = new FormData();
     formData.append('imageproducto', selectedFile);
     try {
