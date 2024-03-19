@@ -28,8 +28,8 @@ function AgregarLayout(props){
         },
         body: JSON.stringify({ username, password }),
       });*/
-        const response = await fetch('http://192.168.1.68:3700/api/sproduc', {
-      //  const response = await fetch('https://backenddemosite.onrender.com/api/sproduc', {
+        //const response = await fetch('http://192.168.1.68:3700/api/sproduc', {
+        const response = await fetch('https://backenddemosite.onrender.com/api/sproduc', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,8 +43,8 @@ function AgregarLayout(props){
         console.log(data.producto._id);
       setnombreProducto('');
       setDescripcion('');
-      fetch(`http://192.168.1.68:3700/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
-      //fetch(`https://backenddemosite.onrender.com/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
+      //fetch(`http://192.168.1.68:3700/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
+      fetch(`https://backenddemosite.onrender.com/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
       method: 'POST',
       body: formData,
     })
