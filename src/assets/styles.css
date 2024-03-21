@@ -419,6 +419,7 @@ padding: 5vh;
     }
     .crud-section section {
         width: 96.5%;
+        border: 0.8vh solid rgba(13, 67, 133, 1);
     }
     .style-form input[type="text"], .style-form input[type="password"] {
         width: 97%;
@@ -438,6 +439,7 @@ padding: 5vh;
     }
     .style-mostrar ul li p {
         width: 100%;
+        font-size: 8vh;
     }
     .section-editbuttons{
         margin-top: 2vh;
