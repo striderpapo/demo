@@ -16,8 +16,9 @@ function LoginLayout(props){
           if(response.user.length>0){
           props.onLogin(response.user[0].username); // Llama a la función proporcionada por el padre
           }*/
-          //const response = await fetch('http://192.168.1.68:3700/api/guser', {
-          const response = await fetch('https://backenddemosite.onrender.com/api/guser', {
+          if(username.trim() !== '' && password.trim() !== ''){
+          const response = await fetch('http://192.168.1.68:3700/api/guser', {
+          //const response = await fetch('https://backenddemosite.onrender.com/api/guser', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -32,6 +33,9 @@ function LoginLayout(props){
             setLoginError('Se proporcionó nombre de usuario o contraseña incorrectos.');
           }
       //    navigate("/home");
+        }else{
+          setLoginError('Se proporcionó nombre de usuario o contraseña incorrectos.');
+        }
         } catch (error) {
           console.error('Error de inicio de sesión:', error);
         }

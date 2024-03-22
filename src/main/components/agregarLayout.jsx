@@ -9,6 +9,11 @@ function AgregarLayout(props){
   const [selectedFile, setSelectedFile] = useState(null);
 
   console.log(props)
+  
+  const isFormValid = () => {
+    return nombre.trim() !== '' && descripcion.trim() !== '' && selectedFile !== null;
+  };
+
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
   };
@@ -28,8 +33,8 @@ function AgregarLayout(props){
         },
         body: JSON.stringify({ username, password }),
       });*/
-        //const response = await fetch('http://192.168.1.68:3700/api/sproduc', {
-        const response = await fetch('https://backenddemosite.onrender.com/api/sproduc', {
+        const response = await fetch('http://192.168.1.68:3700/api/sproduc', {
+        //const response = await fetch('https://backenddemosite.onrender.com/api/sproduc', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,8 +48,8 @@ function AgregarLayout(props){
         console.log(data.producto._id);
       setnombreProducto('');
       setDescripcion('');
-      //fetch(`http://192.168.1.68:3700/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
-      fetch(`https://backenddemosite.onrender.com/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
+      fetch(`http://192.168.1.68:3700/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
+      //fetch(`https://backenddemosite.onrender.com/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
       method: 'POST',
       body: formData,
     })
@@ -89,7 +94,7 @@ function AgregarLayout(props){
   {selectedFile && (
         <p>Selected file: {selectedFile.name}</p>
       )}
-  <button onClick={agregarSubmit} className="but-agregarSubmit">Agregar</button>
+  <button onClick={agregarSubmit} disabled={!isFormValid()} className={`but-agregarSubmit ${!isFormValid() ? 'disabled' : ''}`} >Agregar</button>
 
   </div>
       

@@ -109,9 +109,6 @@ body:has(.box-mongodb:hover) .box-mongodb p {
     background-color: rgb(46, 48, 71);
     padding: 2vh;
 }
-.login-div{
-    /*background-color: red;*/
-}
 .login-zone{
     display: flex;
     flex-direction: column;
@@ -224,14 +221,19 @@ padding: 5vh;
     }
 
 .style-form input[type="text"],
-.style-form input[type="password"] {
+.style-form input[type="password"]{
     margin-bottom: 3vh;
-    width: 50%;
+    width: 80%;
     height: 6vh;
     border: none;
     /* border-bottom: 4px solid red; */
     padding: 0.8vh;
     font-size: 4vh;
+  }
+  .style-form input[type="file"]{
+    margin-bottom: 3vh;
+    height: 6vh;
+    font-size: 3vh;
   }
 
   .but-agregarSubmit{
@@ -244,6 +246,9 @@ padding: 5vh;
     width: 48%;
     color: white;
 }
+.disabled{
+    color:#252737
+    }
 .style-mostrar{
     padding: 6vh 0vh;
     background-color:#2e3047
@@ -449,6 +454,9 @@ padding: 5vh;
         height: 7vh;
         padding: 1vh;
         font-size: 7vh;
+    }
+    .error-message{
+        width: 85%;
     }
 
 }

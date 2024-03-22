@@ -5,6 +5,10 @@ function PruebapetLayout(props){
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+
+  const isFormValid = () => {
+    return username.trim() !== '' && password.trim() !== '';
+  };
   
   const handleSubmit = async () => {
     try {
@@ -15,8 +19,9 @@ function PruebapetLayout(props){
         },
         body: JSON.stringify({ username, password }),
       });*/
-      //const response = await fetch('http://192.168.1.68:3700/api/suser', {
-      const response = await fetch('https://backenddemosite.onrender.com/api/suser', {
+      if(username.trim() !== '' && password.trim() !== ''){
+      const response = await fetch('http://192.168.1.68:3700/api/suser', {
+      //const response = await fetch('https://backenddemosite.onrender.com/api/suser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -31,6 +36,7 @@ function PruebapetLayout(props){
       } else {
         console.error(data.message);
       }
+    }
     } catch (error) {
       console.error('Error al enviar datos:', error);
     }
@@ -58,7 +64,7 @@ function PruebapetLayout(props){
     value={password}
     onChange={(e) => setPassword(e.target.value)}
   />
-  <button onClick={handleSubmit} className="but-login">Registrarte</button>
+  <button onClick={handleSubmit} disabled={!isFormValid()} className="but-login">Registrarte</button>
   <button onClick={handleClick} className="but-registro">Volver</button>
   </div>
   </div>
