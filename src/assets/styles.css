@@ -445,6 +445,7 @@ padding: 5vh;
     .style-mostrar ul li p {
         width: 100%;
         font-size: 8vh;
+        overflow-y: hidden;
     }
     .section-editbuttons{
         margin-top: 2vh;
