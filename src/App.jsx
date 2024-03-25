@@ -1,10 +1,7 @@
 import { Routes, Route ,Link,Navigate,BrowserRouter} from "react-router-dom"
 import { useState } from 'react';
 import Inicio from "./main/containers/inicio"
-import Inside from "./main/containers/inside"
-import Insidedos from "./main/containers/insideDos"
 import Addpet from './main/containers/pruebapet'
-import Contacto from "./main/containers/contacto"
 import Home from "./main/containers/home"
 import Login from "./main/containers/login"
 import PrivateRoute from "./main/guard/authGuard"
@@ -32,11 +29,6 @@ console.log(isAuthenticated)
       <Route path="/" exact element={isAuthenticated ? <Navigate to="/home" /> : <Inicio /> } />
       <Route path="/inicio" element={ isAuthenticated ? <Navigate to="/home" /> :<Inicio /> } />
       <Route path="/nosotros" element={isAuthenticated ? <Navigate to="/home" /> :<Addpet/>} />
-      <Route path="/contacto" element={ isAuthenticated ? <Navigate to="/home" /> :<Contacto /> }>
-        <Route index element={<Navigate to="/contacto/inside" replace />} />
-        <Route path="inside" element={< Inside/> } />
-        <Route path="insidedos" element={ <Insidedos/> } />
-        </Route>
       <Route path="/login" exact element={isAuthenticated ? <Navigate to="/home" /> :<Login onLogin={handleLogin}/>} /> 
       <Route path="/home"  element= {isAuthenticated ?<PrivateRoute element={<Home onLogout={handleLogout}/>} algo={isAuthenticated}/>:<Login onLogin={handleLogin}/>}/>
       </Routes>
