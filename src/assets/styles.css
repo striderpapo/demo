@@ -417,8 +417,8 @@ padding: 5vh;
         width: 33.2%;
     }
     .crud-section section {
-        width: 96.6%;
-        border: 0.8vh solid rgba(13, 67, 133, 1);
+        width: auto;
+        border: 0.5vh solid rgba(13, 67, 133, 1);
     }
     .style-form input[type="text"], .style-form input[type="password"] {
         width: 97%;
