@@ -389,11 +389,15 @@ padding: 5vh;
         font-size: 6vh;
     }
     .login-zone{
-        padding: 21vh 10vh;
+        height: 57vh;
+        padding: 15vh 8vh;
     }
     .form-class{
         width: 100%;
         height: 38vh;
+    }
+    input[type="text"], input[type="password"] {
+        font-size: 3.2vh;
     }
     .style-home h2 {
         text-align: center;
