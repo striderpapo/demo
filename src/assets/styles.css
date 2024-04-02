@@ -460,8 +460,8 @@ padding: 5vh;
     .error-message{
         width: 100%;
         margin-top: 1vh;
-        font-size: 2.6vh;
-        padding: 3vh 1vh;
+        font-size: 3vh;
+        padding: 2vh 8vh;
     }
 
 }
