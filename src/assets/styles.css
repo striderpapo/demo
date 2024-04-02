@@ -110,6 +110,9 @@ body:has(.box-mongodb:hover) .box-mongodb p {
     background-color: rgb(46, 48, 71);
     padding: 2vh;
 }
+.login-div{
+    overflow: hidden;
+}
 .login-zone{
     display: flex;
     flex-direction: column;
