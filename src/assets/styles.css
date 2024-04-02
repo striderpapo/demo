@@ -151,6 +151,10 @@ input[type="password"] {
     background-color: lightblue;
     border-radius: 1vh;
     font-size: 3.5vh;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  .login-zone button:active {
+    transform: scale(0.95);
   }
   .login-zone h2,
   .login-zone input[type="text"],
