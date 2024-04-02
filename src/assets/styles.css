@@ -116,7 +116,6 @@ body:has(.box-mongodb:hover) .box-mongodb p {
     background-color: rgb(46, 48, 71);;
     align-items: center;
     padding: 21vh ;
-    overflow: hidden;
 }
 .form-class{
     width: 31%;
