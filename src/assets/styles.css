@@ -389,8 +389,10 @@ padding: 5vh;
         font-size: 6vh;
     }
     .login-zone{
-        height: 57vh;
-        padding: 15vh 8vh;
+        /*height: 57vh;
+        padding: 15vh 8vh;*/
+        height: 44vh;
+        padding: 10vh 8vh;
     }
     .form-class{
         width: 100%;
