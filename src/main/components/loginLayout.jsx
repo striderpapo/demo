@@ -68,6 +68,7 @@ function LoginLayout(props){
     <button onClick={handleLogin} className="but-login">Iniciar Sesión</button>
     <button onClick={handleClick} className="but-registro">Registrarte</button>
     </div>
+    {loginError && <p className="error-message">{loginError}</p>}
     </div>
   </div>
       
