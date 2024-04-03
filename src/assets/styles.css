@@ -269,19 +269,23 @@ padding: 5vh;
 }
 
 .style-mostrar ul{
-    padding: 3vh;
+    padding: 1.5vh;
     list-style: none;
     border-top:2px solid rgba(13,67,133,1);;
     color: aliceblue;
 }
-.style-mostrar ul li p{
-    font-size: 10vh;
-}
 .style-mostrar ul li p {
     display: inline-block;
-    font-size: 10vh;
-    width: 50%;
+    font-size: 8vh;
+    width: 49.5%;
+    overflow-y: scroll;
 }
+.style-mostrar ul li p:nth-child(2) {
+    margin-left: 1vh;
+}
+.style-mostrar ul li p::-webkit-scrollbar {
+    display: none; /* Oculta la barra de desplazamiento en Webkit (Chrome, Safari, Opera) */
+  }
 .style-mostrar input[type="text"], .style-mostrar input[type="password"] {
     width: 90%;
     height: 7vh;
