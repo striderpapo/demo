@@ -131,6 +131,7 @@ function ActualizarLayout(props){
   />
             </p>
             <p>{item.nombreagrega}</p>
+            <img src={item.imageproducto} alt="Logo de mi aplicación" />
             <p className="section-editbuttons">
             <button onClick={edita && idedita==item._id ?() => confirmUpdate(item,nombre,descripcion):() => handleUpdate(item)}  className={edita && idedita==item._id?"but-editarConfirmar":"but-editarSubmit"}>{edita && idedita==item._id?"Confirmar":"Editar"}</button>
             <button onClick={() => handleDelete(item._id)} className="but-editarSubmit">Eliminar</button>
