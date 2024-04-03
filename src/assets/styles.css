@@ -301,6 +301,8 @@ padding: 5vh;
     display: inline-flex !important;
     flex-direction: row;
     justify-content: space-between;
+    width: 100% !important;
+    margin-top: 1vh;
 }
 .but-editarSubmit{
     background-color: #2e3047;
