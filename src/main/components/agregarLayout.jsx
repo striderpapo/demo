@@ -1,5 +1,5 @@
 import { Link,useNavigate,Outlet } from "react-router-dom";
-import { useState } from 'react';
+import { useState,  useRef  } from 'react';
 import { jwtDecode } from "jwt-decode";
 import { decodeToken } from '../services/auth'; 
 
@@ -7,6 +7,7 @@ function AgregarLayout(props){
   const [nombre, setnombreProducto] = useState('');
   const [descripcion, setDescripcion] = useState('');
   const [selectedFile, setSelectedFile] = useState(null);
+  const refinputFile = useRef();
 
   console.log(props)
   
@@ -15,7 +16,14 @@ function AgregarLayout(props){
   };
 
   const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
+    const files = event.target.files;
+    //setSelectedFile(event.target.files[0]);
+    if (files.length > 0) {
+      const selectedFile = files[0];
+      setSelectedFile(selectedFile);
+    } else {
+      setSelectedFile(null);
+    }
   };
   const agregarSubmit = async () => {
     const decoded = jwtDecode(localStorage.getItem('myData'));
@@ -48,6 +56,8 @@ function AgregarLayout(props){
         console.log(data.producto._id);
       setnombreProducto('');
       setDescripcion('');
+      setSelectedFile(null);
+      refinputFile.current.value = "";
       fetch(`http://192.168.1.68:3700/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
       //fetch(`https://backenddemosite.onrender.com/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
       method: 'POST',
@@ -90,7 +100,7 @@ function AgregarLayout(props){
     value={descripcion}
     onChange={(e) => setDescripcion(e.target.value)}
   />
-  <input type="file" onChange={handleFileChange} />
+  <input type="file" onChange={handleFileChange} ref={refinputFile}/>
   {selectedFile && (
         <p>Selected file: {selectedFile.name}</p>
       )}
