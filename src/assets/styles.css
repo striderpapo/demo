@@ -115,7 +115,7 @@ body:has(.box-mongodb:hover) .box-mongodb p {
     flex-direction: column;
     background-color: rgb(46, 48, 71);;
     align-items: center;
-    padding: 21vh ;
+    padding:11.8vh 21vh ;
 }
 .form-class{
     width: 31%;
@@ -143,7 +143,8 @@ input[type="password"] {
     padding: 0.8vh;
     font-size: 4vh;
   }
-  .login-zone button{
+  .login-zone .but-login,
+  .login-zone .but-registro{
     width: 80%;
     height: 5vh;
     border: 5px solid lightblue;
@@ -152,6 +153,7 @@ input[type="password"] {
     border-radius: 1vh;
     font-size: 3.5vh;
     transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
   }
   .login-zone button:active {
     transform: scale(0.95);
@@ -329,13 +331,16 @@ padding: 5vh;
 }
 .error-message{
     width: 50%;
-    margin-top: 2vh;
-    font-size: 4vh;
+    margin-top: 1vh;
+    font-size: 3.5vh;
     color: rgb(205 0 0);
     background-color: #FFCDC7;
-    padding: 2vh 1vh;
+    padding: 1vh 1vh;
     text-align: center;
 }
+.facebook-button-container {
+   margin-top: 1vh;
+  }
 /*medias queries*/
 @media (max-width: 1024px) {
   /*  .titel-inicio{
@@ -402,7 +407,7 @@ padding: 5vh;
         /*height: 57vh;
         padding: 15vh 8vh;*/
         height: 44vh;
-        padding: 10vh 8vh;
+        padding: 1vh 8vh;
     }
     .form-class{
         width: 100%;
