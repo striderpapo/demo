@@ -78,7 +78,7 @@ function LoginLayout(props){
   };
 
     
-      /*const handleLoginFace = () => {
+      /* const handleLoginFace = () => {
         window.FB.login(response => {
           if (response.authResponse) {
             console.log('Bienvenido! Fetching your information.... ');
