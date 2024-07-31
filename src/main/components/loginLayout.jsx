@@ -47,6 +47,7 @@ function LoginLayout(props){
       }
 
       const responseFacebook =  async (response) => {
+        console.log(response)
     const { accessToken } = response;
     console.log(accessToken);
     try {
@@ -118,6 +119,7 @@ function LoginLayout(props){
         appId="406310499108431"
         autoLoad={false}
         fields="name,email,picture"
+        cssClass="my-facebook-button-class"
         callback={responseFacebook}
         icon="fa-facebook"
         textButton="Iniciar sesión con Facebook" 

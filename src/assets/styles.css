@@ -340,6 +340,29 @@ padding: 5vh;
 }
 .facebook-button-container {
    margin-top: 1vh;
+   width: 25%;
+  }
+.my-facebook-button-class {
+    width: 100%;
+    font-family: Helvetica, sans-serif;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 2vh;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color .3s, border-color .3s;
+    background-color: #4c69ba;
+    border: calc(.06887vw + .67769px) solid #4c69ba;
+    padding: 2vh 5vh;
+}
+.my-facebook-button-class .fa {
+    margin-right: calc(.34435vw + 3.38843px);
+}
+.my-facebook-button-class:hover {
+    background-color: #365899; /* Color de fondo al pasar el ratón */
   }
 /*medias queries*/
 @media (max-width: 1024px) {
