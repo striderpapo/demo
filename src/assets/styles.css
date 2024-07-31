@@ -504,6 +504,10 @@ padding: 5vh;
         font-size: 3vh;
         padding: 2vh 8vh;
     }
+    .facebook-button-container {
+        margin-top: 2vh;
+        width: 100%;
+    }
 
 }
 
