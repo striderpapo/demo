@@ -51,8 +51,8 @@ function LoginLayout(props){
     const { accessToken } = response;
     console.log(accessToken);
     try {
-    const responseback =  await fetch('http://192.168.1.68:3700/api/sfuser', {
-      //const response = await fetch('https://backenddemosite.onrender.com/api/guser', {
+    //const responseback =  await fetch('http://192.168.1.68:3700/api/sfuser', {
+    const responseback = await fetch('https://backenddemosite.onrender.com/api/sfuser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
