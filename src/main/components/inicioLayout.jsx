@@ -9,13 +9,17 @@ function InicioLayout(props){
   function handleClick() {
     navigate("/login");
   }
+
+    function handleClickMysql() {
+    navigate("/loginmysql");
+  }
     return(
       <div>
         <Menu/>
         <h2 className="titel-inicio">{props.item}</h2>
         <div className="box-bd">
           <div className="box-mysql">
-                <p onClick={handleClick}>MySQL</p>
+                <p onClick={handleClickMysql}>MySQL</p>
           </div>
           <div className="box-mongodb">
               <p onClick={handleClick}>mongo DB</p>
@@ -23,7 +27,7 @@ function InicioLayout(props){
         </div>
         <div className="box-bd-device">
           <div className="box-mysql-device">
-                <p onClick={handleClick}>MySQL</p>
+                <p onClick={handleClickMysql}>MySQL</p>
           </div>
           <div className="box-mongodb-device">
               <p onClick={handleClick}>mongo DB</p>

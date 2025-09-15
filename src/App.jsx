@@ -2,8 +2,10 @@ import { Routes, Route ,Link,Navigate,BrowserRouter} from "react-router-dom"
 import { useState } from 'react';
 import Inicio from "./main/containers/inicio"
 import Addpet from './main/containers/pruebapet'
+import Registermysql from './main/containers/registermysql'
 import Home from "./main/containers/home"
 import Login from "./main/containers/login"
+import Loginmysql from "./main/containers/loginMysql"
 import PrivateRoute from "./main/guard/authGuard"
 
 function Aplicacion() {
@@ -11,6 +13,12 @@ function Aplicacion() {
   //let isAuthenticated = localStorage.getItem('myData');
 console.log(isAuthenticated)
   const handleLogin = (newToken) => {
+    setisAuthenticated(newToken);
+    localStorage.setItem('myData', newToken);
+    console.log(typeof newToken)
+  };
+
+    const handleLoginmysql = (newToken) => {
     setisAuthenticated(newToken);
     localStorage.setItem('myData', newToken);
     console.log(typeof newToken)
@@ -28,8 +36,10 @@ console.log(isAuthenticated)
       <Routes>
       <Route path="/" exact element={isAuthenticated ? <Navigate to="/home" /> : <Inicio /> } />
       <Route path="/inicio" element={ isAuthenticated ? <Navigate to="/home" /> :<Inicio /> } />
-      <Route path="/nosotros" element={isAuthenticated ? <Navigate to="/home" /> :<Addpet/>} />
+      <Route path="/registermo" element={isAuthenticated ? <Navigate to="/home" /> :<Addpet/>} />
+      <Route path="/registermy" element={isAuthenticated ? <Navigate to="/home" /> :<Registermysql/>} />
       <Route path="/login" exact element={isAuthenticated ? <Navigate to="/home" /> :<Login onLogin={handleLogin}/>} /> 
+      <Route path="/loginmysql" exact element={isAuthenticated ? <Navigate to="/home" /> :<Loginmysql onLogin={handleLoginmysql}/>} /> 
       <Route path="/home"  element= {isAuthenticated ?<PrivateRoute element={<Home onLogout={handleLogout}/>} algo={isAuthenticated}/>:<Login onLogin={handleLogin}/>}/>
       </Routes>
     </div>

@@ -9,8 +9,11 @@ function MenuLayout(props){
             <Link to="/inicio">Home</Link>
           </li>
           <li>
-            <Link to="/login">Login</Link>
-          </li>          
+            <Link to="/login">Login MongoDB</Link>
+          </li>    
+            <li>
+            <Link to="/loginmysql">Login Mysql</Link>
+          </li>        
         </ul>
       </nav>
       </div>

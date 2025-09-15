@@ -115,7 +115,7 @@ body:has(.box-mongodb:hover) .box-mongodb p {
     flex-direction: column;
     background-color: rgb(46, 48, 71);;
     align-items: center;
-    padding:11.8vh 21vh ;
+    padding:11vh 21vh ;
 }
 .form-class{
     width: 31%;
@@ -131,6 +131,10 @@ body:has(.box-mongodb:hover) .box-mongodb p {
 }
 .login-zone  h2{
     /*margin-bottom: -2vh;*/
+    color: white;
+}
+.login-zone  h1{
+    margin-bottom: 1vh;
     color: white;
 }
 

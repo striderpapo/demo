@@ -12,13 +12,13 @@ function LoginLayout(props){
       console.log(username)
         try {
           //const response = await fetch(`https://backenddemosite.onrender.com/api/guser/${username}`).then(res => res.json()) 
-          /*const response = await fetch(`http://192.168.1.68:3700/api/guser/${username}/${password}`).then(res => res.json()) 
+          /*const response = await fetch(`http://192.168.1.75:3700/api/guser/${username}/${password}`).then(res => res.json()) 
           console.log(response.user.length)
           if(response.user.length>0){
           props.onLogin(response.user[0].username); // Llama a la función proporcionada por el padre
           }*/
           if(username.trim() !== '' && password.trim() !== ''){
-          //const response = await fetch('http://192.168.1.68:3700/api/guser', {
+          //const response = await fetch('http://192.168.1.75:3700/api/guser', {
           const response = await fetch('https://backenddemosite.onrender.com/api/guser', {
             method: 'POST',
             headers: {
@@ -43,7 +43,7 @@ function LoginLayout(props){
       };
       
       function handleClick() {
-        navigate("/nosotros");
+        navigate("/registermo");
       }
 
       const responseFacebook =  async (response) => {
@@ -51,7 +51,7 @@ function LoginLayout(props){
     const { accessToken } = response;
     console.log(accessToken);
     try {
-    //const responseback =  await fetch('http://192.168.1.68:3700/api/sfuser', {
+    //const responseback =  await fetch('http://192.168.1.75:3700/api/sfuser', {
     const responseback = await fetch('https://backenddemosite.onrender.com/api/sfuser', {
         method: 'POST',
         headers: {
@@ -95,6 +95,7 @@ function LoginLayout(props){
     <div className="login-div">
       <Menu/>
       <div className="login-zone">
+         <h1>Demo MongoDB</h1>
         <div className="form-class">
     <h2>Iniciar Sesión</h2>
     <input
