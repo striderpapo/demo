@@ -1,5 +1,5 @@
-import { Link,useNavigate,Outlet } from "react-router-dom";
-import FacebookLogin from 'react-facebook-login';
+import { /*Link,*/useNavigate/*,Outlet*/ } from "react-router-dom";
+//import FacebookLogin from 'react-facebook-login';
 import { useState } from 'react';
 import Menu from '../containers/menu'
 function LoginmysqlLayout(props){ 
@@ -46,7 +46,7 @@ function LoginmysqlLayout(props){
         navigate("/registermy");
       }
 
-      const responseFacebook =  async (response) => {
+      /*const responseFacebook =  async (response) => {
         console.log(response)
     const { accessToken } = response;
     console.log(accessToken);
@@ -75,8 +75,8 @@ function LoginmysqlLayout(props){
     
     /*fields="name,picture"   Solo solicitando nombre y foto de perfil
         scope="public_profile"   Solo solicitando el perfil público
-        con esto solo pido nombre y foto*/
-  };
+        con esto solo pido nombre y foto
+  };*/
 
     
       /* const handleLoginFace = () => {
@@ -125,7 +125,7 @@ function LoginmysqlLayout(props){
   
 
 }
-const estilos = {
+/*const estilos = {
   avatar: {
     fontFamily: "-apple-system",
     fontSize: "5rem",
@@ -139,7 +139,7 @@ const estilos = {
     padding:"1rem",
     cursor:"pointer",
   }
-};
+};*/
 
 
 export default LoginmysqlLayout
