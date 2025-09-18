@@ -29,6 +29,7 @@ function LoginmysqlLayout(props){
             console.log(response.ok)
           if(response.ok){
             const data = await response.json();
+            console.log(data.token)
             props.onLogin(data.token); // Llama a la función proporcionada por el padre
           }else{
             setLoginError('Se proporcionó nombre de usuario o contraseña incorrectos.');
