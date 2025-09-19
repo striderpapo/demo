@@ -424,11 +424,11 @@ padding: 5vh;
         padding: 2vh;
     }
     nav ul {
-        line-height: 12vh;
+        line-height: 7vh;
     }
     nav ul li {
-        padding: 12px;
-        font-size: 6vh;
+        padding: 3vh 0vh 0vh 2vh;
+        font-size: 4.5vh;
     }
     .login-zone{
         /*height: 57vh;

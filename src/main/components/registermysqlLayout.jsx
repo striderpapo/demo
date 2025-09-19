@@ -21,8 +21,8 @@ function RegistermysqlLayout(props){
         body: JSON.stringify({ username, password }),
       });*/
       if(username.trim() !== '' && password.trim() !== ''){
-      //const response = await fetch('http://192.168.1.75:3700/api/suser', {
-      const response = await fetch('https://backenddemomysql.onrender.com/api/suser', {
+      const response = await fetch('http://192.168.1.75:3700/api/suser', {
+      //const response = await fetch('https://backenddemomysql.onrender.com/api/suser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -18,8 +18,8 @@ function LoginmysqlLayout(props){
           props.onLogin(response.user[0].username); // Llama a la función proporcionada por el padre
           }*/
           if(username.trim() !== '' && password.trim() !== ''){
-          //const response = await fetch('http://192.168.1.75:3700/api/guser', {
-          const response = await fetch('https://backenddemomysql.onrender.com/api/guser', {
+          const response = await fetch('http://192.168.1.75:3700/api/guser', {
+          //const response = await fetch('https://backenddemomysql.onrender.com/api/guser', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
