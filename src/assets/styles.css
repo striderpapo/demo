@@ -423,8 +423,13 @@ padding: 5vh;
     .titel-inicio {
         padding: 2vh;
     }
+    .nav-box {
+     height: auto; 
+}
     nav ul {
-        line-height: 7vh;
+        line-height: 4vh;
+        flex-direction: column;
+        text-align: center;
     }
     nav ul li {
         padding: 3vh 0vh 0vh 2vh;
