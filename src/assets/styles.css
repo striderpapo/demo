@@ -261,7 +261,7 @@ padding: 5vh;
 .disabled{
     border: 3px solid #b5b5b5;
     background-color: #b5b5b5;
-    color:#000000,
+    color:#000000 !important;
     }
 .style-mostrar{
     padding: 6vh 0vh;
