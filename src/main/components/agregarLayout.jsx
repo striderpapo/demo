@@ -58,8 +58,8 @@ function AgregarLayout(props){
       setDescripcion('');
       setSelectedFile(null);
       refinputFile.current.value = "";
-      //fetch(`http://192.168.1.75:3700/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
-      fetch(`https://backenddemosite.onrender.com/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
+      fetch(`http://192.168.1.75:3700/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
+      //fetch(`https://backenddemosite.onrender.com/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
       method: 'POST',
       body: formData,
     })
