@@ -261,7 +261,8 @@ padding: 5vh;
 .disabled{
     border: 3px solid #b5b5b5;
     background-color: #b5b5b5;
-    color:#000000 !important;
+    color:#9f9e9e !important;
+    cursor: not-allowed;
     }
 .style-mostrar{
     padding: 6vh 0vh;
@@ -333,7 +334,7 @@ padding: 5vh;
     width: 48%;
     color: white;
 }
-.but-editarSubmit:hover,.but-agregarSubmit:hover{
+.but-editarSubmit:not(:disabled):hover,.but-agregarSubmit:not(:disabled):hover{
     background-color: rgba(13,67,133,1);
 }
 .error-message{
