@@ -259,7 +259,8 @@ padding: 5vh;
     color: white;
 }
 .disabled{
-    color:#93949a
+    background-color: #b5b5b5;
+    color:#93949a,
     }
 .style-mostrar{
     padding: 6vh 0vh;
