@@ -113,7 +113,7 @@ function AgregarLayout(props){
   
 
 }
-const estilos = {
+/*const estilos = {
   avatar: {
     fontFamily: "-apple-system",
     fontSize: "5rem",
@@ -128,7 +128,7 @@ const estilos = {
     cursor:"pointer",
   }
 
-};
+};*/
 
 
 export default AgregarLayout
