@@ -41,8 +41,8 @@ function AgregarLayout(props){
         },
         body: JSON.stringify({ username, password }),
       });*/
-        //const response = await fetch('http://192.168.1.75:3700/api/sproduc', {
-        const response = await fetch('https://backenddemosite.onrender.com/api/sproduc', {
+        const response = await fetch('http://192.168.1.75:3700/api/sproduc', {
+        //const response = await fetch('https://backenddemosite.onrender.com/api/sproduc', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
