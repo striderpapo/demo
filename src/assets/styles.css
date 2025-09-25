@@ -259,8 +259,9 @@ padding: 5vh;
     color: white;
 }
 .disabled{
+    border: 3px solid #b5b5b5;
     background-color: #b5b5b5;
-    color:#93949a,
+    color:#000000,
     }
 .style-mostrar{
     padding: 6vh 0vh;
