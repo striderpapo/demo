@@ -372,6 +372,13 @@ padding: 5vh;
 .my-facebook-button-class:hover {
     background-color: #365899; /* Color de fondo al pasar el ratón */
   }
+  .limit-prod{
+    background-color: red;
+    color: white;
+    font-size: 4vh;
+    padding: 1vh;
+    margin: 1vh 0vh 0vh 0vh;
+  }
 /*medias queries*/
 @media (max-width: 1024px) {
   /*  .titel-inicio{

@@ -12,7 +12,7 @@ function AgregarLayout(props){
   console.log(props)
   
   const isFormValid = () => {
-    return nombre.trim() !== '' && descripcion.trim() !== '' && selectedFile !== null;
+    return nombre.trim() !== '' && descripcion.trim() !== '' && selectedFile !== null &&  props.contdat < 3 ;
   };
 
   const handleFileChange = (event) => {
@@ -41,8 +41,8 @@ function AgregarLayout(props){
         },
         body: JSON.stringify({ username, password }),
       });*/
-        const response = await fetch('http://192.168.1.75:3700/api/sproduc', {
-        //const response = await fetch('https://backenddemosite.onrender.com/api/sproduc', {
+        //const response = await fetch('http://192.168.1.75:3700/api/sproduc', {
+        const response = await fetch('https://backenddemosite.onrender.com/api/sproduc', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -58,8 +58,8 @@ function AgregarLayout(props){
       setDescripcion('');
       setSelectedFile(null);
       refinputFile.current.value = "";
-      fetch(`http://192.168.1.75:3700/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
-      //fetch(`https://backenddemosite.onrender.com/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
+      //fetch(`http://192.168.1.75:3700/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
+      fetch(`https://backenddemosite.onrender.com/api/uImageProd/${data.producto._id}/${nombreagrega}`, {
       method: 'POST',
       body: formData,
     })
@@ -71,6 +71,9 @@ function AgregarLayout(props){
       })
       .then(data => {
         console.log('Image uploaded successfully:', data);
+                if (props.refreshCount) {
+    props.refreshCount();
+  }
         // Do something with the response if needed
       })
       .catch(error => {
@@ -105,7 +108,7 @@ function AgregarLayout(props){
         <p>Selected file: {selectedFile.name}</p>
       )}
   <button onClick={agregarSubmit} disabled={!isFormValid()} className={`but-agregarSubmit ${!isFormValid() ? 'disabled' : ''}`} >Agregar</button>
-
+  {props.contdat>=3?<span className="limit-prod"><h4>No puedes guardar mas de 3 productos,borra 1</h4></span>:''}
   </div>
       
     )
